@@ -42,8 +42,8 @@ if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
         mkvirtualenv --no-site-packages $name
 
         # echo "alias $name='cd $dir && workon $name'" >> $HOME/.envs.profile
-        echo            >> $WORKON_HOME/$name/bin/postactivate
         echo "cd $dir"  >> $WORKON_HOME/$name/bin/postactivate
+        echo            >> $WORKON_HOME/$name/bin/postactivate
 
         workon $name
     }
