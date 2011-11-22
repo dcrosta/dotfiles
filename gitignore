@@ -1,9 +1,4 @@
-*.class
+.*.swp
+.*.swo
 *.pyc
-*.swo
-*.swp
-.svn
-.swo
-*#*
-#
-.#*
+.DS_Store

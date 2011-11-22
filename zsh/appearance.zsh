@@ -39,7 +39,7 @@ setopt prompt_subst # expansion of color codes, etc. in the prompt
 # print the fully resolved shell command with time stamp
 # to be run from zsh's builtin 'preexec' with all arguments passed through ($*)
 function theme_preexec () {
-    echo "($fg[magenta]`date +%r`$reset_color) $fg[cyan]$3$reset_color"
+    # echo "($fg[magenta]`date +%r`$reset_color) $fg[cyan]$3$reset_color"
 }
 
 # print the exit code of the previous command in red if non-zero
@@ -84,5 +84,5 @@ function hostname_info {
 }
 
 # a colorful multiline prompt using the above defined functions
-PROMPT='%{$fg[yellow]%}%n%{$reset_color%}@$(hostname_info):%{$fg[blue]%}%~%{$reset_color%}
-$(return_code)$(ve_prompt_info)$(svn_prompt_info)$(git_prompt_info)$(prompt_char)%{$reset_color%} '
+PROMPT='$(ve_prompt_info)%{$fg[yellow]%}%n%{$reset_color%}@$(hostname_info):%{$fg[blue]%}%~%{$reset_color%} $(prompt_char)%{$reset_color%} '
+
