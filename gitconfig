@@ -1,23 +1,13 @@
 [user]
-    name = Matt Singleton
-    email = matthew.j.singleton@gmail.com
-
+    name = Dan Crosta
+    email = dcrosta@late.am
+[http]
+    sslVerify = false
+[core]
+    excludesfile = /Users/dcrosta/.gitignore
 [alias]
     st = status
     ci = commit
-    br = branch
-    co = checkout
     df = diff
-    lg = log -p
-
-[core]
-    whitespace = trailing-space,space-before-tab,cr-at-eol
-    editor = vim
-    autocrlf = input
-    excludesfile = /Users/matt/.gitignore
-
-[push]
-    default = nothing
-
 [color]
-    ui = true
+    diff = true
