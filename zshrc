@@ -18,7 +18,7 @@ export PAGER="/usr/bin/less -S"
 
 alias pyc='find . -name "*.pyc" -delete'
 alias swp='find . -name ".*.swp" -delete'
-alias mkvirtualenv='mkvirtualenv --no-site-packages'
+alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 
 
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then 
