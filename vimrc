@@ -128,6 +128,9 @@ if has("gui_running")
     set lines=65
     set columns=239
     color solarized
+
+    " for pyflakes ftplugin
+    highlight SpellBad term=underline gui=undercurl guisp=Orange
 else
     color desert
 endif
