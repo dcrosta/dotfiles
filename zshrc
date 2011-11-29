@@ -20,8 +20,8 @@ alias pyc='find . -name "*.pyc" -delete'
 alias swp='find . -name ".*.swp" -delete'
 alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 
-
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then 
     export WORKON_HOME='/Users/dcrosta/.virtualenvs'
     source /usr/local/bin/virtualenvwrapper.sh
 fi
+

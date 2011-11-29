@@ -57,7 +57,7 @@ function svn_prompt_info {
 # print the current git branch (BRANCH)
 function git_prompt_info {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "(${ref#refs/heads/}) "
+    echo "${ref#refs/heads/}"
 }
 
 # print a special prompt char in version controlled directories
@@ -69,8 +69,14 @@ function prompt_char {
 
 # virtualenv
 function ve_prompt_info {
-    if [[ $IN_VIRTUALENV == "true" ]]; then
-        echo "%{$fg[green]%}℘ %{$reset_color%}"
+    echo `basename "$VIRTUAL_ENV"` || return
+}
+
+function prompt_prefix {
+    prefix="$(ve_prompt_info)@$(git_prompt_info)"
+    prefix=${prefix#@}
+    if [ ! -z "$prefix" ]; then
+        echo "($prefix) "
     fi
 }
 
@@ -84,5 +90,6 @@ function hostname_info {
 }
 
 # a colorful multiline prompt using the above defined functions
-PROMPT='$(ve_prompt_info)%{$fg[yellow]%}%n%{$reset_color%}@$(hostname_info):%{$fg[blue]%}%~%{$reset_color%} $(prompt_char)%{$reset_color%} '
+PROMPT='$(prompt_prefix)%{$fg[yellow]%}%n%{$reset_color%}@$(hostname_info):%{$fg[blue]%}%~%{$reset_color%} $(prompt_char)%{$reset_color%} '
+_PROMPT=$PROMPT
 

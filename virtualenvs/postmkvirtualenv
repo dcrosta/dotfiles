@@ -7,8 +7,9 @@ envdir="$parent/$envname"
 
 postactivate=$VIRTUAL_ENV/bin/postactivate
 
-echo "cd $envdir" >> $postactivate
-echo              >> $postactivate
+echo "cd $envdir"             >> $postactivate
+echo 'export PROMPT=$_PROMPT' >> $postactivate
+echo                          >> $postactivate
 
 if [ ! -e $envdir ]; then
     mkdir -p $envdir
