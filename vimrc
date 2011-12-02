@@ -120,6 +120,11 @@ else
 
 endif " has("autocmd")
 
+
+" for pyflakes ftplugin
+highlight SpellBad term=underline gui=undercurl guisp=Orange
+
+
 if has("gui_running")
     set gfn:Menlo:h14.00
     set go-=r
@@ -128,9 +133,6 @@ if has("gui_running")
     set lines=65
     set columns=239
     color solarized
-
-    " for pyflakes ftplugin
-    highlight SpellBad term=underline gui=undercurl guisp=Orange
 else
     color desert
 endif
