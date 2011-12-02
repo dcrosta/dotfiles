@@ -62,7 +62,12 @@ function git_prompt_info {
 
 # print a special prompt char in version controlled directories
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
+    $(git diff --exit-code > /dev/null 2>&1)
+    if [ $? -eq 1 ]; then
+        git branch >/dev/null 2>/dev/null && echo "%{$fg[red]%}±%{$reset_color%}" && return
+    else
+        git branch >/dev/null 2>/dev/null && echo '±' && return
+    fi
     svn info >/dev/null 2>/dev/null && echo 'ϟ' && return
     echo '$'
 }
