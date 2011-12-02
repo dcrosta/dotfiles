@@ -126,15 +126,15 @@ highlight SpellBad term=underline gui=undercurl guisp=Orange
 
 
 if has("gui_running")
-    set gfn:Menlo:h14.00
-    set go-=r
-    " set go-=T
-    set go-=L
-    set lines=65
-    set columns=239
-    color solarized
+  set gfn:Menlo:h14.00
+  set go-=r
+  " set go-=T
+  set go-=L
+  set lines=71
+  set columns=239
+  color solarized
 else
-    color desert
+  color desert
 endif
 
 
