@@ -1,0 +1,114 @@
+# vim:filetype=python
+"""Python interpreter configuration file.
+
+This file is executed when the Python interactive shell is started if
+$PYTHONSTARTUP is in your environment and points to this file. It's just
+regular Python commands, so do what you will. Your ~/.inputrc file can greatly
+complement this file.
+
+SOURCE: http://sontek.net/tips-and-tricks-for-the-python-interpreter
+"""
+
+import os
+
+try:
+    import readline
+except ImportError:
+    # Only available in Unix.
+    print('Module readline not available.')
+else:
+    import rlcompleter
+    import atexit
+    readline.parse_and_bind('tab: complete')
+
+    # Enable a History
+    HISTFILE = os.path.expanduser('~/.pyhistory')
+
+    # Read the existing history if there is one
+    if os.path.exists(HISTFILE):
+        readline.read_history_file(HISTFILE)
+
+    # Set maximum number of items that will be written to the history file
+    readline.set_history_length(1000)
+
+    @atexit.register
+    def savehist():
+        import readline
+        import os
+        HISTFILE = '%s/.pyhistory' % os.environ['HOME']
+        readline.write_history_file(HISTFILE)
+finally:
+    del readline
+    del HISTFILE
+    del rlcompleter
+    del atexit
+
+
+def randpass(length=32, letters=True, upper=True, numbers=True, symbols=True):
+    import string
+    import random
+    choices = ''
+    if letters:
+        choices += string.letters
+    if upper:
+        choices += string.letters.upper()
+    if numbers:
+        choices += string.digits
+    if symbols:
+        choices += '!@#$%^&*()-_=+}{][|:;<,>.?'
+    return ''.join(random.choice(choices) for x in xrange(length))
+
+def avg(values):
+    return sum(map(float, values)) / len(values)
+
+def stddev(values):
+    mean = avg(values)
+    return (sum((v - mean) ** 2 for v in values) / len(values)) ** 0.5
+
+def median(values):
+    return sorted(values)[len(values) / 2]
+
+def histogram(values, rows=10, cols=15):
+    values = map(float, values)
+    smallest = min(values)
+    largest = max(values)
+    width = (largest - smallest) / cols + 0.000001
+
+    buckets = [0] * cols
+    for value in values:
+        bucket = int((value - smallest) / width)
+        buckets[bucket] += 1
+
+    most = max(buckets)
+    height = float(most) / rows
+
+    print ''.join(['--'] * cols)
+    for r in xrange(rows):
+        cutoff = (rows - r - 1) *  height
+        for b in buckets:
+            if b > cutoff:
+                print '#',
+            else:
+                print ' ',
+        print
+    print ''.join(['--'] * cols)
+    print '  width: %f' % width
+    print '  min: %f' % smallest
+    print '  avg: %f' % avg(values)
+    print '  max: %f' % largest
+    print '  median: %f' % median(values)
+    print '  stddev: %f' % stddev(values)
+
+def humansize(value):
+    sizes = [
+        (1024 * 1024 * 1024, 'GB'),
+        (1024 * 1024, 'MB'),
+        (1024, 'KB'),
+    ]
+
+    for size, name in sizes:
+        if value > size:
+            print "%.2f%s" % (float(value) / size, name)
+            return
+    print "%sB" % value
+
