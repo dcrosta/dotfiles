@@ -1,26 +1,12 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
-
-" allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" keep 50 lines of command line history
 set history=500
 
-" show the cursor position all the time
 set ruler
-
-" display incomplete commands
 set showcmd
-
 set incsearch
 set hlsearch
 set ignorecase
-
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
 
 syntax on
 set background=dark
@@ -30,8 +16,9 @@ set smarttab
 set nowrap
 
 set modelines=5
-set listchars=tab:»·,trail:·
-set list
+set list listchars=tab:»·,trail:·
+
+set updatetime=1000
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -49,15 +36,17 @@ if has("autocmd")
 
   " thanks, @xcolour: https://github.com/xcolour/dotfiles/blob/master/vimrc
   au FileType text setlocal textwidth=72
+
   au FileType html setlocal ts=2 sw=2 sts=2 expandtab
-  au FileType css setlocal ts=2 sw=2 sts=2 expandtab
-  au FileType css setlocal ts=2 sw=2 sts=2 expandtab
   au FileType xhtml setlocal ts=2 sw=2 sts=2 expandtab
   au FileType htmldjango setlocal ts=2 sw=2 sts=2 expandtab
   au FileType javascript setlocal ts=2 sw=2 sts=2 expandtab
+  au FileType css setlocal tw=0 ts=2 sw=2 sts=2 expandtab
+  au FileType sass setlocal tw=0 ts=2 sw=2 sts=2 expandtab
 
   " python
   au BufRead,BufNewFile *.wsgi      setlocal filetype=python
+  au BufRead,BufNewFile *.tac       setlocal filetype=python
 
   " text files
   au BufRead,BufNewFile *.txt       setlocal filetype=text
@@ -80,16 +69,16 @@ if has("autocmd")
   au BufRead,BufNewFile *.cap       setlocal filetype=ruby
 
   " structured text formats
-  set updatetime=1000
   au BufRead,BufNewFile *.md        setlocal filetype=text tw=76
   au BufRead,BufNewFile *.rst       setlocal filetype=text tw=76
+
   "au BufRead,BufNewFile *.md        let b:start_time = localtime()
   au CursorHold         *.md        update
   "au CursorHold         *.md        call UpdateFile()
   "au BufWritePre        *.md        let b:start_time = localtime()
 
-  " .sccs == sassy CSS
-  au BufRead,BufNewFile *.css       setlocal filetype=css tw=0
+  au BufRead,BufNewFile *.scss      setlocal filetype=sass
+  au BufRead,BufNewFile *.sass      setlocal filetype=sass
 
 
   " When editing a file, always jump to the last known cursor position.
@@ -100,18 +89,6 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
-  augroup END
-
-  " vim -b : edit binary using xxd-format!
-  augroup Binary
-    au!
-    au BufReadPre  *.pgm let &bin=1
-    au BufReadPost *.pgm if &bin | %!xxd
-    au BufReadPost *.pgm set ft=xxd | endif
-    au BufWritePre *.pgm if &bin | %!xxd -r
-    au BufWritePre *.pgm endif
-    au BufWritePost *.pgm if &bin | %!xxd
-    au BufWritePost *.pgm set nomod | endif
   augroup END
 
 else
