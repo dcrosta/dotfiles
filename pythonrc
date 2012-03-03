@@ -82,22 +82,22 @@ def histogram(values, rows=10, cols=15):
     most = max(buckets)
     height = float(most) / rows
 
-    print ''.join(['--'] * cols)
+    print(''.join(['--'] * cols))
     for r in xrange(rows):
         cutoff = (rows - r - 1) *  height
         for b in buckets:
             if b > cutoff:
-                print '#',
+                print('#', end=' ')
             else:
-                print ' ',
-        print
-    print ''.join(['--'] * cols)
-    print '  width: %f' % width
-    print '  min: %f' % smallest
-    print '  avg: %f' % avg(values)
-    print '  max: %f' % largest
-    print '  median: %f' % median(values)
-    print '  stddev: %f' % stddev(values)
+                print(' ', end=' ')
+        print()
+    print(''.join(['--'] * cols))
+    print('  width: %f' % width)
+    print('  min: %f' % smallest)
+    print('  avg: %f' % avg(values))
+    print('  max: %f' % largest)
+    print('  median: %f' % median(values))
+    print('  stddev: %f' % stddev(values))
 
 def humansize(value):
     sizes = [
@@ -108,7 +108,7 @@ def humansize(value):
 
     for size, name in sizes:
         if value > size:
-            print "%.2f%s" % (float(value) / size, name)
+            print("%.2f%s" % (float(value) / size, name))
             return
-    print "%sB" % value
+    print("%sB" % value)
 
