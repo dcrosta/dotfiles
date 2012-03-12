@@ -44,6 +44,8 @@ if has("autocmd")
   au FileType css setlocal tw=0 ts=2 sw=2 sts=2 expandtab
   au FileType sass setlocal tw=0 ts=2 sw=2 sts=2 expandtab
 
+  au FileType ruby setlocal tw=0 ts=2 sw=2 sts=2 expandtab
+
   " python
   au BufRead,BufNewFile *.wsgi      setlocal filetype=python
   au BufRead,BufNewFile *.tac       setlocal filetype=python
