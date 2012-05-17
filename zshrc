@@ -19,6 +19,8 @@ export PAGER="/usr/bin/less -S"
 alias pyc='find . -name "*.pyc" -delete'
 alias swp='find . -name ".*.swp" -delete'
 alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
+alias codereview='python ~/dev/10gen/scratch/tools/upload.py -e dcrosta@10gen.com -s codereview.10gen.com'
+alias whichvm='python -c "import json; print(json.load(file(\".vagrant\"))[\"active\"][\"default\"])"'
 
 if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then 
     export WORKON_HOME='/Users/dcrosta/.virtualenvs'

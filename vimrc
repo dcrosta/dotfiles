@@ -83,6 +83,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.sass      setlocal filetype=sass
 
   au BufRead,BufNewFile *.json      setlocal filetype=javascript ts=2 sts=2 sw=2
+  au BufRead,BufNewFile SCons*      setlocal filetype=python
 
 
   " When editing a file, always jump to the last known cursor position.
