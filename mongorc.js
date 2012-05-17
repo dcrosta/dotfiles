@@ -8,7 +8,7 @@ prompt = function() {
   if (serverStatus.process != "mongod") {
     return serverStatus.process + '@' + hostname + ':' + db + '> ';
   } else {
-    var states = ["startup", "primary", "uecondary", "recovering", "fatal", "startup2", "unknown", "arbiter", "down", "rollback"];
+    var states = ["startup", "primary", "secondary", "recovering", "fatal", "startup2", "unknown", "arbiter", "down", "rollback"];
     var rsstatus = db.adminCommand({replSetGetStatus: 1});
 
     if (rsstatus.ok == 0) {
