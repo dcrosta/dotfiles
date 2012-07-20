@@ -74,11 +74,6 @@ if has("autocmd")
   au BufRead,BufNewFile *.md        setlocal filetype=text tw=76
   au BufRead,BufNewFile *.rst       setlocal filetype=text tw=76
 
-  "au BufRead,BufNewFile *.md        let b:start_time = localtime()
-  au CursorHold         *.md        update
-  "au CursorHold         *.md        call UpdateFile()
-  "au BufWritePre        *.md        let b:start_time = localtime()
-
   au BufRead,BufNewFile *.scss      setlocal filetype=sass
   au BufRead,BufNewFile *.sass      setlocal filetype=sass
 
@@ -102,10 +97,9 @@ else
 
 endif " has("autocmd")
 
+call pathogen#infect()
 
-" for pyflakes ftplugin
-highlight SpellBad term=underline gui=undercurl guisp=Orange
-
+let g:flake8_ignore="E302,W391,W404"
 
 if has("gui_running")
   set gfn:Menlo:h14.00
@@ -160,14 +154,5 @@ fun! PyCrumbs()
 endfun
 
 nmap <expr> gf PyCrumbs()
-
-fun! UpdateFile()
-  " save file after 3 seconds of inactivity
-  if ((localtime() - b:start_time) >= 3)
-    update
-    let b:start_time = localtime()
-  else
-    echo "Only " . (localtime() - b:start_time) . " seconds have elapsed"
-  endif
-endfun
+nmap tt :NERDTreeToggle<CR>
 
