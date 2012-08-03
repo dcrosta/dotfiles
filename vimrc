@@ -156,3 +156,4 @@ endfun
 nmap <expr> gf PyCrumbs()
 nmap tt :NERDTreeToggle<CR>
 
+source ~/.vimrc.local
