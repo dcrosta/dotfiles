@@ -48,7 +48,6 @@ if has("autocmd")
 
   " python
   au BufRead,BufNewFile *.wsgi      setlocal filetype=python
-  au BufRead,BufNewFile *.tac       setlocal filetype=python
 
   " text files
   au BufRead,BufNewFile *.txt       setlocal filetype=text
@@ -63,8 +62,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.ftl       setlocal filetype=html
 
   " zsh configs and scripts
-  au BufRead,BufNewFile *.zsh-theme setlocal filetype=zsh
-  au BufRead,BufNewFile *.zsh-overrides setlocal filetype=zsh
+  au BufRead,BufNewFile *.zsh*      setlocal filetype=zsh
   au BufRead,BufNewFile *.zsh       setlocal filetype=zsh
 
   " ruby files
@@ -78,7 +76,6 @@ if has("autocmd")
   au BufRead,BufNewFile *.sass      setlocal filetype=sass
 
   au BufRead,BufNewFile *.json      setlocal filetype=javascript ts=2 sts=2 sw=2
-  au BufRead,BufNewFile SCons*      setlocal filetype=python
 
   " Makefiles
   au BufRead,BufNewFile Makefile*   setlocal nolist noexpandtab
