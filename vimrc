@@ -156,4 +156,6 @@ endfun
 nmap <expr> gf PyCrumbs()
 nmap tt :NERDTreeToggle<CR>
 
-source ~/.vimrc.local
+if filereadable("~/.vimrc.local")
+  source ~/.vimrc.local
+endif
