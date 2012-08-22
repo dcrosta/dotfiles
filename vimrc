@@ -80,6 +80,9 @@ if has("autocmd")
   au BufRead,BufNewFile *.json      setlocal filetype=javascript ts=2 sts=2 sw=2
   au BufRead,BufNewFile SCons*      setlocal filetype=python
 
+  " Makefiles
+  au BufRead,BufNewFile Makefile*   setlocal nolist noexpandtab
+
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
