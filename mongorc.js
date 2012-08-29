@@ -1,5 +1,5 @@
 prompt = function() {
-  var serverStatus = db.serverStatus();
+  var serverStatus = db.runCommand({serverStatus: 1});
 
   var hostname = serverStatus.host;
   if (!/\d+\.\d+\.\d+\.\d+/.test(hostname) && /\./.test(hostname))
