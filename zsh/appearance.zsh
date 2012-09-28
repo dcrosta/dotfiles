@@ -87,7 +87,7 @@ function prompt_prefix {
 
 # print the hostname in green if local, else red
 function hostname_info {
-    echo "%{$fg[green]%}%{$bg[red]%}%{$ZSH_HOST_PREFIX%}%m%{$ZSH_HOST_SUFFIX%}%{$reset_color%}"
+    echo "%{$fg[green]%}%{$ZSH_HOST_PREFIX%}%m%{$ZSH_HOST_SUFFIX%}%{$reset_color%}"
 }
 
 # a colorful multiline prompt using the above defined functions
