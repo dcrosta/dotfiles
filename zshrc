@@ -21,7 +21,7 @@ alias swp='find . -name ".*.swp" -delete'
 alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 alias whichvm='python -c "import json; print(json.load(file(\".vagrant\"))[\"active\"][\"default\"])"'
 
-virtualenvwrapper=`which virtualenvwrapper.sh`
+virtualenvwrapper=`which virtualenvwrapper.sh 2> /dev/null`
 if [ -f "$virtualenvwrapper" ]; then
     export WORKON_HOME="$HOME/.virtualenvs"
     source $virtualenvwrapper
