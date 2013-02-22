@@ -7,5 +7,6 @@
     st = status
     ci = commit
     df = diff
+    fml = reset --hard
 [color]
     diff = true
