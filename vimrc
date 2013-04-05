@@ -99,8 +99,6 @@ endif " has("autocmd")
 
 call pathogen#infect()
 
-let g:flake8_ignore="E302,W391,W404"
-
 if has("gui_running")
   set gfn:Menlo:h14.00
   set go-=r
