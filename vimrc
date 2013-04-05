@@ -18,6 +18,8 @@ set nowrap
 set modelines=5
 set list listchars=tab:»·,trail:·
 
+set wildignore+=*.pyc,*.pyo
+
 set updatetime=1000
 
 " Only do this part when compiled with support for autocommands.
