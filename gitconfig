@@ -10,3 +10,5 @@
     fml = reset --hard
 [color]
     diff = true
+[diff]
+    algorithm = histogram
