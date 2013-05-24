@@ -9,7 +9,7 @@ set hlsearch
 set ignorecase
 
 syntax on
-set background=dark
+set background=light
 
 set ts=4 sts=4 sw=4 expandtab
 set smarttab
