@@ -25,6 +25,20 @@ set splitright
 
 set updatetime=1000
 
+" Helpful bindings
+let mapleader = ","
+
+" toggle case of current word
+:nnoremap <c-u> mbviw~`b
+:inoremap <c-u> <esc><c-u>li
+
+" manipulate ~/.vimrc easily
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+:nnoremap ## :execute "rightbelow vsplit ".bufname("#")<cr>
+
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
