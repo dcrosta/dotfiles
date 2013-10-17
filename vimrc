@@ -21,12 +21,11 @@ set list listchars=tab:»·,trail:·
 set wildignore+=*.pyc,*.pyo
 
 set splitbelow
-set splitright
 
 set updatetime=1000
 
 " Helpful bindings
-let mapleader = ","
+let mapleader = " "
 
 " toggle case of current word
 :nnoremap <c-u> mbviw~`b
@@ -117,6 +116,9 @@ else
 endif " has("autocmd")
 
 call pathogen#infect()
+
+" reload ctrl-p cache
+:nnoremap ^] CtrlPClearCache
 
 if has("gui_running")
   set gfn:Menlo:h14.00
