@@ -9,6 +9,6 @@ else
 fi
 
 PLATFORM=`uname -s`
-if [ "$PLATFORM" = "Linux"]; then
+if [ "$PLATFORM" = "Linux" ]; then
     crontab ~/dotfiles/linux-crontab
 fi
