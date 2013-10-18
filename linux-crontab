@@ -1,1 +1,3 @@
+MAILTO=""
+
 0 * * * * cd ~/dotfiles && git pull origin master && git fetch
