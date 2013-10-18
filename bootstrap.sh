@@ -7,3 +7,8 @@ else
     cd dotfiles
     git pull origin master
 fi
+
+PLATFORM=`uname -s`
+if [ "$PLATFORM" = "Linux"]; then
+    crontab ~/dotfiles/linux-crontab
+fi
