@@ -18,8 +18,6 @@ set nowrap
 set modelines=5
 set list listchars=tab:»·,trail:·
 
-set wildignore+=*.pyc,*.pyo
-
 set splitbelow
 
 set updatetime=1000
@@ -36,6 +34,10 @@ let mapleader = " "
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
 :nnoremap ## :execute "rightbelow vsplit ".bufname("#")<cr>
+
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=*.db,*.o,*.obj,*.swp,*.bak,*.git,*.pyc,**/_trial_temp/**,*.egg-info/**,*.egg/**,**/build/**,**/htmlcov/**,**/dist/**,**/_build/**
 
 
 " Only do this part when compiled with support for autocommands.
