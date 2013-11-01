@@ -14,7 +14,7 @@ fi
 # override builtin functions (preexec, precmd, etc.)
 source ~/.zsh/functions.zsh-overrides
 
-export PATH=$HOME/bin:$PATH:/usr/local/sbin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 export PYTHONSTARTUP=$HOME/.pythonrc
 export EDITOR=/usr/bin/vim
