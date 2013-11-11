@@ -1,3 +1,3 @@
 MAILTO=""
 
-0 * * * * curl -kL https://raw.github.com/dcrosta/dotfiles/master/bootstrap.sh | bash
+0 * * * * curl -kL http://s.late.am/d4 | bash
