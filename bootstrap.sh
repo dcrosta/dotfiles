@@ -10,5 +10,8 @@ fi
 
 PLATFORM=`uname -s`
 if [ "$PLATFORM" = "Linux" ]; then
-    crontab ~/dotfiles/linux-crontab
+    cp ~/dotfiles/linux-crontab ~/dotfiles/crontab.tmp
+    [ -f ~/.local-crontab ] && cat ~/.local-crontab >> ~/dotfiles/crontab.tmp
+    crontab ~/dotfiles/crontab.tmp
+    rm -f ~/dotfiles/crontab.tmp
 fi
