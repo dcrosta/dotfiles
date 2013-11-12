@@ -6,9 +6,8 @@ if [ -e $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
 
-goenv=$(go env | grep ^GO)
-if [ ! -z "$goenv" ]; then
-    eval $goenv
+if (( $+commands[go] )); then
+    eval $(go env | grep ^GO )
 fi
 
 # override builtin functions (preexec, precmd, etc.)
