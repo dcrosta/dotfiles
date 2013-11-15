@@ -126,6 +126,7 @@ call pathogen#infect()
 :nnoremap ^] CtrlPClearCache
 
 if has("gui_running")
+  set guioptions+=T
   set gfn:Menlo:h14.00
   set go-=r
   " set go-=T
