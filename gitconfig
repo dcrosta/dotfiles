@@ -12,3 +12,5 @@
     diff = true
 [diff]
     algorithm = histogram
+[merge]
+	ff = false
