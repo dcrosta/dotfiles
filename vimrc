@@ -7,6 +7,7 @@ set showcmd
 set incsearch
 set hlsearch
 set ignorecase
+set hidden
 
 syntax on
 set background=light
