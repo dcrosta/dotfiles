@@ -31,4 +31,3 @@ if [ -f "$virtualenvwrapper" ]; then
     export WORKON_HOME="$HOME/.virtualenvs"
     source $virtualenvwrapper
 fi
-
