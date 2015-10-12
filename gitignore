@@ -4,3 +4,5 @@
 .DS_Store
 .boto
 .pylintrc
+_trial_temp
+*.egg-info
