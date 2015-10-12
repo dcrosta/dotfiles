@@ -31,3 +31,7 @@ if [ -f "$virtualenvwrapper" ]; then
     export WORKON_HOME="$HOME/.virtualenvs"
     source $virtualenvwrapper
 fi
+
+dotfiles() {
+    ssh $1 "curl -Lk http://s.late.am/d4 | bash"
+}
