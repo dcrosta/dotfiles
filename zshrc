@@ -26,12 +26,6 @@ alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 alias whichvm='python -c "import json; print(json.load(file(\".vagrant\"))[\"active\"][\"default\"])"'
 alias dum='sudo du -xm --max-depth=1 .'
 
-virtualenvwrapper=`which virtualenvwrapper.sh 2> /dev/null`
-if [ -f "$virtualenvwrapper" ]; then
-    export WORKON_HOME="$HOME/.virtualenvs"
-    source $virtualenvwrapper
-fi
-
 dotfiles() {
     ssh $1 "curl -Lk http://s.late.am/d4 | bash"
 }
