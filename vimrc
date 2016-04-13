@@ -8,6 +8,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set hidden
+set scrolloff=5
 
 syntax on
 set background=light
