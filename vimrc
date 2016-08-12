@@ -65,6 +65,7 @@ if has("autocmd")
   au FileType javascript setlocal ts=2 sw=2 sts=2 expandtab
   au FileType css setlocal tw=0 ts=2 sw=2 sts=2 expandtab
   au FileType sass setlocal tw=0 ts=2 sw=2 sts=2 expandtab
+  au FileType go setlocal ts=4 sts=4 sw=4 noexpandtab listchars=tab:\ \ ,trail:·
 
   au FileType ruby setlocal tw=0 ts=2 sw=2 sts=2 expandtab
 
