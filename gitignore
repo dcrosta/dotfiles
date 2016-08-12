@@ -6,3 +6,5 @@
 .pylintrc
 _trial_temp
 *.egg-info
+*.class
+*.cache

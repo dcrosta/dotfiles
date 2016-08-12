@@ -39,7 +39,7 @@ let mapleader = " "
 
 set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*.db,*.o,*.obj,*.swp,*.bak,*.git,*.pyc,**/_trial_temp/**,*.egg-info/**,*.egg/**,**/build/**,**/htmlcov/**,**/dist/**,**/_build/**,**/.tox/**
+set wildignore+=*.db,*.o,*.obj,*.swp,*.bak,*.git,*.pyc,**/_trial_temp/**,*.egg-info/**,*.egg/**,**/build/**,**/htmlcov/**,**/dist/**,**/_build/**,**/.tox/**,*.class,**/.cache/**
 
 
 " Only do this part when compiled with support for autocommands.
