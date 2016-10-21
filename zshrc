@@ -2,10 +2,6 @@ for config_file (~/.zsh/*.zsh) source $config_file
 
 export EDITOR=vim
 
-if [ -e $HOME/.zshrc-local ]; then
-    source $HOME/.zshrc-local
-fi
-
 if (( $+commands[go] )); then
     eval $(go env | grep ^GO )
 fi
@@ -29,3 +25,7 @@ alias dum='sudo du -xm --max-depth=1 .'
 dotfiles() {
     ssh $1 "curl -Lk http://s.late.am/d4 | bash"
 }
+
+if [ -e $HOME/.zshrc-local ]; then
+    source $HOME/.zshrc-local
+fi
