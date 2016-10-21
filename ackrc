@@ -1,2 +1,3 @@
 --ignore-dir=.tox
 --ignore-dir=node_modules
+--type-set=ts=.ts
