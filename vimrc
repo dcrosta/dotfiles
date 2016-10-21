@@ -130,7 +130,7 @@ call pathogen#infect()
 :nnoremap ^] CtrlPClearCache
 
 " ignore some stuff in ctrl-p
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git$\|\.hg$\|\.svn\|coverage$'
 
 if has("gui_running")
   set guioptions+=T
