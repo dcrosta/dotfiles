@@ -35,12 +35,11 @@ else:
     readline.set_history_length(1000)
 
     @atexit.register
-    def savehist():
+    def savehist(histfile=HISTFILE):
         import readline
-        import os
-        HISTFILE = '%s/.pyhistory' % os.environ['HOME']
-        readline.write_history_file(HISTFILE)
+        readline.write_history_file(histfile)
 finally:
+    del os
     del readline
     del HISTFILE
     del rlcompleter
