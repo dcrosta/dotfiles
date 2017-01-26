@@ -14,7 +14,9 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PYTHONSTARTUP=$HOME/.pythonrc
 export EDITOR=/usr/bin/vim
 export PAGER="/usr/bin/less -S"
+
 export PIP_WHEEL_DIR=$HOME/.pip/wheelhouse
+export PIP_FIND_LINKS=$PIP_WHEEL_DIR
 
 
 alias pyc='find . -name "*.pyc" -delete ; find . -name "__pycache__" -delete ; find . -name "_trial_temp" -delete ; find . -name ".tox" -delete'
