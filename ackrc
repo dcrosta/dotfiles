@@ -1,7 +1,10 @@
 --ignore-dir=.tox
---ignore-dir=node_modules
 --ignore-dir=coverage
 --ignore-dir=coverage-results
+--ignore-dir=htmlcov
+--ignore-dir=node_modules
 --ignore-dir=test-results
+--ignore-file=is:.coverage
+--ignore-file=is:.gitignore
 --type-set=ts=.ts
 --type-set=typescripts=.ts
