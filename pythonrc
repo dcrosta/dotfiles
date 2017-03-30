@@ -36,8 +36,11 @@ else:
 
     @atexit.register
     def savehist(histfile=HISTFILE):
-        import readline
-        readline.write_history_file(histfile)
+        try:
+            import readline
+            readline.write_history_file(histfile)
+        except IOError:
+            pass
 finally:
     del os
     del readline
