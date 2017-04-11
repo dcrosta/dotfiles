@@ -11,6 +11,7 @@ source ~/.zsh/functions.zsh-overrides
 
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+export PYTHONDONTWRITEBYTECODE=1
 export PYTHONSTARTUP=$HOME/.pythonrc
 export EDITOR=/usr/bin/vim
 export PAGER="/usr/bin/less -S"
