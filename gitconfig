@@ -8,7 +8,7 @@
     ci = commit
     df = diff
     fml = reset --hard
-	cehckout = checkout
+    cehckout = checkout
 [color]
     diff = true
 [diff]
