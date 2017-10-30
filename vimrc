@@ -127,13 +127,16 @@ else
 
 endif " has("autocmd")
 
-call pathogen#infect()
+call plug#begin('~/.vim/bundle')
 
-" reload ctrl-p cache
-:nnoremap ^] CtrlPClearCache
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --no-zsh'} | Plug 'junegunn/fzf.vim'
 
-" ignore some stuff in ctrl-p
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git$\|\.hg$\|\.svn\|coverage\|htmlcov\|output\|published$'
+call plug#end()
+
+" fzf.vim
+nnoremap <silent> <c-p> :Files!<cr>
 
 if has("gui_running")
   set guioptions+=T
