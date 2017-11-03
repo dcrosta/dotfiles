@@ -17,4 +17,4 @@ while true; do
     HERE=$(dirname "${HERE}")
 done
 
-exec find ${HERE} ${FZF_FIND_OPTS} -printf "%P\n"
+exec find ${HERE} ${FZF_FIND_OPTS} -type f -printf "%P\n"
