@@ -137,7 +137,11 @@ Plug 'vim-scripts/ZoomWin'
 call plug#end()
 
 " fzf.vim
-nnoremap <silent> <c-p> :Files!<cr>
+command! -bang -nargs=? -complete=dir FzfFind call
+    \ fzf#vim#files(<q-args>,
+    \   {'source': '~/dotfiles/fzffind'},
+    \   <bang>0)
+nnoremap <silent> <c-p> :FzfFind!<cr>
 
 if has("gui_running")
   set guioptions+=T

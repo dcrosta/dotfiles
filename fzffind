@@ -1,0 +1,20 @@
+#!/bin/bash
+
+HERE=${PWD}
+
+while true; do
+    if [ "${HERE}" = "/" ]; then
+        # found nothing, search current dir
+        HERE=${PWD}
+        break
+    fi
+    if [ -d "${HERE}/.git" ]; then
+        break
+    fi
+    if [ "${HERE}" = "${HOME}" ]; then
+        break
+    fi
+    HERE=$(dirname "${HERE}")
+done
+
+exec find ${HERE} ${FZF_FIND_OPTS} -printf "%P\n"
