@@ -74,6 +74,7 @@ if has("autocmd")
   au FileType ruby setlocal tw=0 ts=2 sw=2 sts=2 expandtab
 
   " python
+  au BufRead,BufNewFile *.pyst      setlocal filetype=python
   au BufRead,BufNewFile *.wsgi      setlocal filetype=python
 
   " text files
