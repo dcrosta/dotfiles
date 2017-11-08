@@ -3,7 +3,7 @@ for config_file (~/.zsh/*.zsh) source $config_file
 export EDITOR=vim
 
 if (( $+commands[go] )); then
-    eval $(go env | grep ^GO )
+    eval $(go env | grep ^GO 2> /dev/null )
 fi
 
 # override builtin functions (preexec, precmd, etc.)
