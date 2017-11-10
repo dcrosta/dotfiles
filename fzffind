@@ -17,4 +17,8 @@ while true; do
     HERE=$(dirname "${HERE}")
 done
 
-exec find ${HERE} ${FZF_FIND_OPTS} -type f -printf "%P\n"
+if [ $(uname) = "Darwin" ]; then
+    exec find ${HERE} ${FZF_FIND_OPTS} -type f | sed "s,^${HERE}/,,"
+else
+    exec find ${HERE} ${FZF_FIND_OPTS} -type f -printf "%P\n"
+fi
