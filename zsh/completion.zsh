@@ -8,6 +8,9 @@ setopt always_to_end
 
 WORDCHARS=''
 
+# support custom completions here in dotfiles/zsh/
+fpath=(~/.zsh/completions $fpath)
+
 autoload -U compinit
 compinit -i
 
