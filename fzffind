@@ -1,24 +1,21 @@
 #!/bin/bash
 
-HERE=${PWD}
+HERE=$PWD
+ROOT=$HERE
 
 while true; do
-    if [ "${HERE}" = "/" ]; then
+    if [ "$ROOT" = "/" ]; then
         # found nothing, search current dir
-        HERE=${PWD}
+        ROOT=$HERE
         break
     fi
-    if [ -d "${HERE}/.git" ]; then
+    if [ -d "$ROOT/.git" ]; then
         break
     fi
-    if [ "${HERE}" = "${HOME}" ]; then
+    if [ "$ROOT" = "$HOME" ]; then
         break
     fi
-    HERE=$(dirname "${HERE}")
+    ROOT=$(dirname "$ROOT")
 done
 
-if [ $(uname) = "Darwin" ]; then
-    exec find ${HERE} ${FZF_FIND_OPTS} -type f | sed "s,^${HERE}/,,"
-else
-    exec find ${HERE} ${FZF_FIND_OPTS} -type f -printf "%P\n"
-fi
+exec find $ROOT $FZF_FIND_OPTS -not -name *.swp -not -name *.swo -type f | python $HOME/dotfiles/relpath.py $HERE
