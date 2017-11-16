@@ -103,7 +103,7 @@ if has("autocmd")
   au BufRead,BufNewFile *.scss      setlocal filetype=sass
   au BufRead,BufNewFile *.sass      setlocal filetype=sass
 
-  au BufRead,BufNewFile *.json      setlocal filetype=javascript ts=2 sts=2 sw=2
+  au BufRead,BufNewFile *.json      setlocal filetype=javascript ts=2 sts=2 sw=2 expandtab
 
   " Makefiles
   au BufRead,BufNewFile Makefile*   setlocal nolist noexpandtab
