@@ -19,7 +19,7 @@ if [ -e ~/.virtualenvs ]; then
 
     for f in `ls -1 virtualenvs`
     do
-        mv ~/.virtualenvs/${f} dotfiles-backup/virtualenvs/${f}
+        [ -e "~/.virtualenvs/${f}" ] && mv ~/.virtualenvs/${f} dotfiles-backup/virtualenvs/${f}
         ln -sf `pwd`/virtualenvs/${f} ~/.virtualenvs/${f}
     done
 fi
