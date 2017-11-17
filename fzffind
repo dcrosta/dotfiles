@@ -18,4 +18,8 @@ while true; do
     ROOT=$(dirname "$ROOT")
 done
 
-exec find $ROOT $FZF_FIND_OPTS -not -name *.swp -not -name *.swo -type f | python $HOME/dotfiles/relpath.py $HERE
+if [ "$FZF_EXCLUDE" != "" ] ;then
+    exec find $ROOT -type f | egrep -i -v "$FZF_EXCLUDE" | python $HOME/dotfiles/relpath.py $HERE
+else
+    exec find $ROOT -type f | python $HOME/dotfiles/relpath.py $HERE
+fi
