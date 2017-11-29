@@ -47,13 +47,6 @@ function return_code {
     echo "%(?..%{$fg[red]%}%?%{$reset_color%} )"
 }
 
-# print the svn revision number (rREVISION)
-function svn_prompt_info {
-    info=$(svn info 2>/dev/null) || return
-    rev=$(echo "$info" | grep Revision | sed 's/Revision: //')
-    echo "(r${rev}) "
-}
-
 # print the current git branch (BRANCH)
 function git_prompt_info {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -68,7 +61,6 @@ function prompt_char {
     else
         git branch >/dev/null 2>/dev/null && echo '±' && return
     fi
-    svn info >/dev/null 2>/dev/null && echo 'ϟ' && return
     echo '$'
 }
 
