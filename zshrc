@@ -9,7 +9,7 @@ fi
 # override builtin functions (preexec, precmd, etc.)
 source ~/.zsh/functions.zsh-overrides
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
 
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONSTARTUP=$HOME/.pythonrc
