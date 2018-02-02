@@ -134,6 +134,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --no-zsh'} | Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/ZoomWin'
+Plug 'pbrisbin/vim-mkdir'
 
 call plug#end()
 
