@@ -9,18 +9,11 @@ import (
 
 func main() {
 	base := os.Args[1]
-	cwd, err := os.Getwd()
-	if err != nil {
-		os.Exit(1)
-	}
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
-		path := filepath.Join(cwd, scanner.Text())
-		formatted, err := filepath.Rel(base, path)
-		if err != nil {
-			continue
-		}
+		path := scanner.Text()
+		formatted, _ := filepath.Rel(base, path)
 		fmt.Println(formatted)
 	}
 }
