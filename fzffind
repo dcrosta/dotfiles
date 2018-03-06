@@ -19,7 +19,7 @@ while true; do
 done
 
 if [ "$FZF_EXCLUDE" != "" ] ;then
-    exec find $ROOT -type f | egrep -i -v "$FZF_EXCLUDE" | python $HOME/dotfiles/relpath.py $HERE
+    exec find $ROOT -type f | egrep -i -v "$FZF_EXCLUDE" | $HOME/dotfiles/relpath $HERE
 else
     exec find $ROOT -type f | $HOME/dotfiles/relpath $HERE
 fi
