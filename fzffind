@@ -18,8 +18,13 @@ while true; do
     ROOT=$(dirname "$ROOT")
 done
 
-if [ "$FZF_EXCLUDE" != "" ] ;then
-    exec find $ROOT -type f | egrep -i -v "$FZF_EXCLUDE" | $HOME/dotfiles/relpath $HERE
+if [ "$FZF_EXCLUDE" != "" ]; then
+    FZF_EXCLUDE="^$"
+fi
+
+fileindex="$ROOT/.fileindex"
+if [ -f "$fileindex" ]; then
+    exec egrep -i -v "$FZF_EXCLUDE" "$fileindex" | $HOME/dotfiles/relpath "$HERE"
 else
-    exec find $ROOT -type f | $HOME/dotfiles/relpath $HERE
+    exec find "$ROOT" -type f | egrep -i -v "$FZF_EXCLUDE" | $HOME/dotfiles/relpath "$HERE"
 fi
