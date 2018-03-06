@@ -1,5 +1,0 @@
-#compdef bzl
-
-_arguments \
-    ':action:(cexec develop drbe-tool fmt gen go go-env goimports itest-clean itest-exec itest-reload itest-run itest-start itest-stop itest-stop-all lint pkg push rootfs size-estimate tool test version-check)' \
-    ':target:_bazel'
