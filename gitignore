@@ -8,3 +8,4 @@ _trial_temp
 *.egg-info
 *.class
 *.cache
+.pytest_cache/
