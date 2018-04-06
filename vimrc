@@ -27,6 +27,9 @@ set splitbelow
 
 set updatetime=1000
 
+" Save .swp files outside of the working dirs
+set directory^=$HOME/.vim/tmp//
+
 " Helpful bindings
 let mapleader = " "
 
