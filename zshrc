@@ -20,10 +20,6 @@ alias dum='sudo du -xm --max-depth=1 .'
 alias cleanenv='pip uninstall -y $(pip freeze | egrep -v "(^-e|appdirs|distribute|pip|pyparsing|setuptools|six|wheel|wsgiref)" | grep -v "^-f" | sed "s/>/=/g" | cut -f1 -d=)'
 
 
-dotfiles() {
-    ssh $1 "curl -Lk http://s.late.am/d4 | bash"
-}
-
 if [ -e $HOME/.zshrc-local ]; then
     source $HOME/.zshrc-local
 fi
