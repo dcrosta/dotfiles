@@ -9,3 +9,7 @@ _trial_temp
 *.class
 *.cache
 .pytest_cache/
+
+# autoenv
+.in
+.out
