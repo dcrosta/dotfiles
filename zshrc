@@ -1,8 +1,5 @@
 for config_file (~/.zsh/*.zsh) source $config_file
 
-antigen bundle zpm-zsh/autoenv
-antigen apply
-
 if (( $+commands[go] )); then
     eval $(go env | grep ^GO 2> /dev/null )
 fi
