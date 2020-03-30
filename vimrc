@@ -114,6 +114,10 @@ if has("autocmd")
   " Go source
   au BufRead,BufNewFile *.go        setlocal filetype=go
 
+  " Typescript source
+  au BufRead,BufNewFile *.tsx       setlocal filetype=typescript
+  au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
