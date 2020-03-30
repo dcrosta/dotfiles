@@ -2,4 +2,6 @@ vim/.netrwhist
 vim/doc/tags
 vim/bundle
 vim/plugged
+vim/tmp/*
 dotfiles-backup
+relpath
