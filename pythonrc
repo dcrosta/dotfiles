@@ -41,9 +41,9 @@ else:
             readline.write_history_file(histfile)
         except IOError:
             pass
-finally:
-    del os
     del readline
-    del HISTFILE
     del rlcompleter
     del atexit
+    del HISTFILE
+finally:
+    del os
