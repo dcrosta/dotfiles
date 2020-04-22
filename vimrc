@@ -78,6 +78,7 @@ if has("autocmd")
 
   " python
   au BufRead,BufNewFile *.pyst      setlocal filetype=python
+  au BufRead,BufNewFile *.pyst-include setlocal filetype=python
   au BufRead,BufNewFile *.wsgi      setlocal filetype=python
 
   " text files
