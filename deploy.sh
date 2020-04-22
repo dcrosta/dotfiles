@@ -6,7 +6,7 @@ rm -rf dotfiles-backup
 mkdir -p dotfiles-backup
 
 # deploy
-for f in ackrc vimrc gitconfig gitignore zshrc zsh vim mongorc.js pythonrc gemrc
+for f in $(cat DOTFILES)
 do
     if [ -e ~/.${f} ]; then
         mv ~/.${f} dotfiles-backup/${f}
