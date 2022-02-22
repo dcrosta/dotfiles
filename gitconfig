@@ -9,6 +9,7 @@
     df = diff
     fml = reset --hard
     cehckout = checkout
+    diffpy = diff -- '*.py'
 [color]
     diff = true
 [diff]
