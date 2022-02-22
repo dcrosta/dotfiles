@@ -14,3 +14,5 @@
     diff = true
 [diff]
     algorithm = histogram
+[dbx]
+	messagedisplayversion = 1

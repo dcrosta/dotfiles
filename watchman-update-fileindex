@@ -21,8 +21,6 @@
 
 ROOT=$1
 
-echo "run at $(date) for $ROOT" >> ~/watchlog
-
 (watchman -j <<-EOF
 ["query", "$ROOT", {
     "expression": [
