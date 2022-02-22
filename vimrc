@@ -143,6 +143,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --no-zsh'} | Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/ZoomWin'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
