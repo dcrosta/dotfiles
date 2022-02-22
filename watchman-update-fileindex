@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# establish a watch with, eg:
+#
+# watchman -j <<-EOF
+# ["trigger", "/Users/dcrosta/src/freddie", {
+# "name":"fileindex",
+# "expression": [
+#     "allof",
+#     ["type", "f"],
+#     ["not", ["match", ".fileindex", "wholename"]],
+#     ["not", ["imatch", ".git/**", "wholename"]],
+#     ["not", ["imatch", "node_modules/**", "wholename"]]
+# ],
+# "command": ["/Users/dcrosta/dotfiles/watchman-update-fileindex", "/Users/dcrosta/src/freddie"],
+# "append_files": true
+# }]
+# EOF
+#
+# substitute paths as appropriate
+
+ROOT=$1
+
+echo "run at $(date) for $ROOT" >> ~/watchlog
+
+(watchman -j <<-EOF
+["query", "$ROOT", {
+    "expression": [
+        "allof",
+        ["type", "f"],
+        ["not", ["imatch", ".git/**", "wholename"]],
+        ["not", ["imatch", "node_modules/**", "wholename"]]
+    ],
+    "fields": ["name"]
+}]
+EOF
+) | jq -r '.files[]' > $ROOT/.fileindex
