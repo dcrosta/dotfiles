@@ -13,3 +13,6 @@ _trial_temp
 # autoenv
 .in
 .out
+
+# fzf/watchman
+.fileindex
