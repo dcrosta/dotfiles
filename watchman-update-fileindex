@@ -32,4 +32,4 @@ ROOT=$1
     "fields": ["name"]
 }]
 EOF
-) | jq -r '.files[]' > $ROOT/.fileindex
+) | jq -r '.files[]' | sed "s,^,$ROOT/," > $ROOT/.fileindex
