@@ -16,3 +16,12 @@ _trial_temp
 
 # fzf/watchman
 .fileindex
+
+# dropbox sdk
+api/generator/internal-sdk/
+
+# envrc
+.envrc
+
+# pyenv
+.python-version
