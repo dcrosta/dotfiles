@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+import argparse
+import random
+import string
+
+parser = argparse.ArgumentParser("generate strings of random letters and digits")
+parser.add_argument("--numeric", "-n", action="store_true", default=False, help="Output only numerals")
+parser.add_argument("--hex", "-x", action="store_true", default=False, help="Output only hexadecimal characters")
+parser.add_argument("length", type=int, help="Length of random gibberish to generate")
+opts = parser.parse_args()
+
+
+if opts.numeric:
+    alphabet = string.digits
+elif opts.hex:
+    alphabet = string.digits + string.ascii_lowercase[:6]
+else:
+    alphabet = string.ascii_letters + string.digits
+print("".join(random.choice(alphabet) for _ in range(opts.length)))

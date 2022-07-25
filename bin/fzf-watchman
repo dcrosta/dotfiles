@@ -1,0 +1,30 @@
+#!/bin/sh
+
+cmd=$1
+here=$(pwd)
+
+if [ "$cmd" = "init" ]; then
+    watchman watch "$here"
+    watchman -j <<EOF
+        ["trigger", "$here", {
+            "name": "fileindex",
+            "expression": [
+                "allof",
+                ["type", "f"],
+                ["not", ["match", ".fileindex", "wholename"]],
+                ["not", ["imatch", ".git/**", "wholename"]],
+                ["not", ["imatch", "node_modules/**", "wholename"]]
+            ],
+            "append_files": true,
+            "command": ["/Users/dcrosta/dotfiles/watchman-update-fileindex", "$here"]
+        }]
+EOF
+
+elif [ "$cmd" = "del" ]; then
+    watchman trigger-del "$here" "fileindex"
+    rm -f "$here/.fileindex"
+
+else
+    echo "usage: fzf-watchman {init,del}"
+    exit 1
+fi
