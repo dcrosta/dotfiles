@@ -162,13 +162,12 @@ if has("gui_running")
   set go-=L
   set lines=71
   set columns=239
-  color solarized
 
   runtime ftplugin/man.vim
   :nmap <expr>K ":Man ".expand("<cword>")."<CR>"
-else
-  color desert
 endif
+
+color solarized
 
 
 fun! PyCrumbs()
