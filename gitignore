@@ -9,6 +9,9 @@ _trial_temp
 *.class
 *.cache
 .pytest_cache/
+.python-version
+.become-pass
+.vault-pass
 
 # autoenv
 .in
