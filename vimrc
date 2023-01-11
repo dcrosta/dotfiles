@@ -14,7 +14,6 @@ set hidden
 set scrolloff=5
 
 syntax on
-set background=light
 
 set ts=4 sts=4 sw=4 expandtab
 set smarttab
@@ -167,8 +166,8 @@ if has("gui_running")
   :nmap <expr>K ":Man ".expand("<cword>")."<CR>"
 endif
 
+set background=light
 color solarized
-
 
 fun! PyCrumbs()
   let on = line(".")
