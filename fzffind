@@ -13,6 +13,7 @@ while true; do
         break
     fi
     if [ "$ROOT" = "$HOME" ]; then
+        ROOT=$HERE
         break
     fi
     ROOT=$(dirname "$ROOT")
