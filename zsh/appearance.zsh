@@ -17,10 +17,6 @@ else
     fi
 fi
 
-# grep
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-
 # less
 export LESS_TERMCAP_mb=$'\e[0;31m'     # begin blinking      - red
 export LESS_TERMCAP_md=$'\e[0;34m'     # begin bold          - blue
