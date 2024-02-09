@@ -118,6 +118,8 @@ if has("autocmd")
   au BufRead,BufNewFile *.tsx       setlocal filetype=typescript
   au BufRead,BufNewFile *.ts        setlocal filetype=typescript
 
+  " Terraform
+  au BufRead,BufNewFile *.tf        setlocal filetype=tf ts=2 sts=2 sw=2 expandtab
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
