@@ -11,9 +11,9 @@ if [ "$cmd" = "init" ]; then
             "expression": [
                 "allof",
                 ["type", "f"],
-                ["not", ["match", ".fileindex", "wholename"]],
-                ["not", ["imatch", ".git/**", "wholename"]],
-                ["not", ["imatch", "node_modules/**", "wholename"]]
+                ["not", ["match", ".fileindex", "basename"]],
+                ["not", ["imatch", ".git/*", "wholename"]],
+                ["not", ["imatch", "node_modules/*", "wholename"]]
             ],
             "append_files": true,
             "command": ["/Users/dcrosta/dotfiles/watchman-update-fileindex", "$here"]

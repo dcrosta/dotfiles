@@ -12,6 +12,8 @@ _trial_temp
 .python-version
 .become-pass
 .vault-pass
+.terraform-version
+.opentofu-version
 
 # autoenv
 .in
@@ -28,3 +30,6 @@ api/generator/internal-sdk/
 
 # pyenv
 .python-version
+
+# IDEs
+.idea
