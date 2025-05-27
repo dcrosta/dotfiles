@@ -1,9 +1,7 @@
 [user]
     name = Dan Crosta
     email = dcrosta@late.am
-[includeIf "gitdir:~/src/"]
-    path = ~/src/.gitconfig
-[includeIf "~/.gitconfig-local"]
+[includeIf "gitdir:~/"]
     path = ~/.gitconfig-local
 [core]
     excludesfile = /Users/dcrosta/.gitignore
