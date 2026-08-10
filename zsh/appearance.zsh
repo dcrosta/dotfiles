@@ -53,11 +53,10 @@ function git_prompt_info {
 function prompt_char {
     $(git diff --exit-code > /dev/null 2>&1)
     if [ $? -eq 1 ]; then
-        git branch >/dev/null 2>/dev/null && echo "%{$fg[red]%}±%{$reset_color%}" && return
+        git branch >/dev/null 2>/dev/null && echo "%{$fg[red]%}$%{$reset_color%}"
     else
-        git branch >/dev/null 2>/dev/null && echo '±' && return
+        echo '$'
     fi
-    echo '$'
 }
 
 # virtualenv
