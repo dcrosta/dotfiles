@@ -14,6 +14,7 @@ _trial_temp
 .vault-pass
 .terraform-version
 .opentofu-version
+logs/
 
 # autoenv
 .in
