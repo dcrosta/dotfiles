@@ -36,3 +36,5 @@ api/generator/internal-sdk/
 .idea
 
 scratch/
+
+**/.claude/settings.local.json
